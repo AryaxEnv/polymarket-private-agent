@@ -1,16 +1,40 @@
-   {
+{
   "name": "polymarket-private-agent",
   "version": "1.0.0",
-  "main": "src/agent.ts",
+  "description": "A Polymarket research agent that routes AI queries through SolRouter's encrypted inference — your research strategy stays private.",
+  "main": "dist/agent.js",
   "scripts": {
-    "dev": "ts-node src/agent.ts"
+    "build": "tsc",
+    "start": "node dist/agent.js",
+    "dev": "ts-node src/agent.ts",
+    "check-balance": "ts-node src/check-balance.ts",
+    "test-telegram": "ts-node src/test-telegram.ts",
+    "bot": "ts-node src/start-bot.ts",
+    "bot:dev": "ts-node --watch src/start-bot.ts"
   },
+  "keywords": [
+    "solana",
+    "polymarket",
+    "private-inference",
+    "solrouter",
+    "prediction-market",
+    "ai-agent"
+  ],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
+    "@solana/web3.js": "^1.95.8",
+    "@solrouter/sdk": "^1.0.1",
+    "bs58": "^5.0.0",
     "dotenv": "^16.4.5"
   },
   "devDependencies": {
-    "@types/node": "^20.12.7",
+    "@types/bs58": "^4.0.4",
+    "@types/node": "^20.12.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
-   }
+}
